@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 const Csr = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 bg-[#f7f7f8] w-full py-6 px-4 sm:px-10">
+    <div className="text-[#3A354F] grid grid-cols-1 lg:grid-cols-2 gap-3 bg-[#f7f7f8] w-full py-6 px-4 sm:px-10">
       <div className="lg:col-span-2">
         <h1 className="font-medium text-2xl ">Tanggung Jawab Sosial Perusahaan | <span className="text-sm italic text-[#BDBDBD]">Corporate Social Responsibility</span></h1>
       </div>
@@ -18,7 +18,7 @@ const Csr = () => {
         <div className="w-full sm:h-full p-6">
           <p className="text-[#124c83] text-xs mb-4">2023-04-14 14:59:55</p>
           <h4 className="text-xl font-medium mb-4 tracking-wide">PT Makassar Metro Network dan PT Jalan Tol Seksi Empat beri Santunan Ke Panti Asuhan</h4>
-          <p>Makassar April 2023, PT Makassar Metro Network dan Lorem ipsum dolor sit amet consectetur adipisicing elit. <Link href="#" className="text-[#124c83] tracking-wide">. . . Selengkapnya</Link></p>
+          <p>Makassar April 2023, PT Makassar Metro Network dan Lorem ipsum dolor sit amet consectetur adipisicing elit. <Link href="/csr/1" className="text-[#124c83] tracking-wide">. . . Selengkapnya</Link></p>
         </div>
       </div>
     </div>

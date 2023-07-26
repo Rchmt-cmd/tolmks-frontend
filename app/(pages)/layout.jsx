@@ -1,10 +1,10 @@
-import Header from './_components/Header'
-import Navbar from './_components/Navbar'
-import './globals.css'
+import Header from '../_components/Header'
+import Navbar from '../_components/Navbar'
+import '../globals.css'
 import { Montserrat } from 'next/font/google'
 import dynamic from 'next/dynamic'
 
-const Footer = dynamic(() => import('./_components/Footer'))
+const Footer = dynamic(() => import('../_components/Footer'))
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
