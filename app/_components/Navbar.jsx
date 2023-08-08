@@ -19,8 +19,8 @@ const Navbar = () => {
         <ul className='hidden group-hover/main:block absolute shadow-md bg-white border-[#E0E0E0] border rounded '>
           <li className='group/item py-2.5 ps-5 border-b hover:bg-[#b6c4d1] relative'>
             <span className='cursor-pointer flex w-48 justify-between flex-row'>
-              <span className='text-[#342E49]'>Gambaran Umum</span>
-              <span><ChevronRightIcon className='mr-2 text-[#342E49] inline w-3' /></span>
+              <span className=''>Gambaran Umum</span>
+              <span><ChevronRightIcon className='mr-2  inline w-3' /></span>
             </span>
             <ul className='hidden group-hover/item:block absolute top-0 -right-[295px] shadow-md bg-white border-[#E0E0E0] border rounded'>
               <li>

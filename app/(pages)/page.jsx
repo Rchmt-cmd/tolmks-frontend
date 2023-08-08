@@ -1,11 +1,21 @@
 import { DocumentTextIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
+import dynamic from "next/dynamic"
+
+const Slides = dynamic(() => import('../_components/Slides'), { 
+  ssr: false,
+  loading: () => <p>Loading</p>
+})
+
+
 
 const Home = () => {
   return (
     <>
       <div className="grid grid-cols-11 gap-4 px-36 py-4 w-full bg-[#F7F7F8]">
-        <div className="bg-slate-950 text-white h-full col-span-11">1</div>
+        <div className=" text-white h-full col-span-11">
+          <Slides />
+        </div>
         <div className="bg-slate-950 text-white h-full col-span-5 row-span-2">2</div>
         <Link href="/struk" className="bg-[#B90008] block text-white col-span-6 p-3 rounded-md shadow-xl text-center">
           <DocumentTextIcon className="w-6 text-3xl block mx-auto text-white mb-4" />

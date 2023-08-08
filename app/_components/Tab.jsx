@@ -8,13 +8,13 @@ const Tab = () => {
     <>
       <ul class="flex flex-wrap -mb-px">
                 <li class="mr-2">
-                    <a href="#" class="flex py-2 px-4 border-b-2 border-transparent rounded-t-lg">
+                    <a href="#" class="flex py-2 px-4 border-b-2 border-transparent rounded-t-lg active">
                       <MagnifyingGlassIcon className="w-4 font-bold mr-2" />
                       <span>Semua</span>
                     </a>
                 </li>
                 <li class="mr-2">
-                    <a href="#" class="flex py-2 px-4 text-[#124C83] border-b-2 border-[#124C83] rounded-t-lg active" aria-current="page">
+                    <a href="#" class="flex py-2 px-4 text-[#124C83] border-b-2 border-[#124C83] rounded-t-lg active">
                       <StarIcon className="w-4 mr-2" />
                       <span>Fasilitas dan Rekreasi</span>
                     </a>
