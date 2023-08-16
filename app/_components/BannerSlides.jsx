@@ -1,17 +1,18 @@
 "use client"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useState, useEffect } from "react"
-const Slides = () => {
+import Image from "next/image";
+const BannerSlides = (slides) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+    const newIndex = isFirstSlide ? slides.slides.data.banner.length - 1 : currentIndex - 1
     setCurrentIndex(newIndex)
   }
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length -1
+    const isLastSlide = currentIndex === slides.slides.data.banner.length - 1
     const newIndex = isLastSlide ? 0 : currentIndex + 1
     setCurrentIndex(newIndex)
   }
@@ -19,24 +20,28 @@ const Slides = () => {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex)
   }
-  const slides = [
-    {
-      url: '/1.png',
-    },
-    {
-      url: '/tol_layang_2.png',
-    },
-    {
-      url: '/tol_layang3.png',
-    },
 
-    {
-      url: '/tol_layang4.png',
-    },
-    {
-      url: '/brk_large_custom.JPG',
-    },
-  ];
+  const slidelist = slides.slides.data.banner
+  console.log(slidelist.length);
+
+  // const slides = [
+  //   {
+  //     url: '/1.png',
+  //   },
+  //   {
+  //     url: '/tol_layang_2.png',
+  //   },
+  //   {
+  //     url: '/tol_layang3.png',
+  //   },
+
+  //   {
+  //     url: '/tol_layang4.png',
+  //   },
+  //   {
+  //     url: '/brk_large_custom.JPG',
+  //   },
+  // ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +53,13 @@ const Slides = () => {
 
   return (
     <div className='w-full h-[90vh] max-h-[1440px] relative group'>
-      <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full rounded-md bg-center bg-cover duration-500'></div>
+      <Image
+                src={`http://127.0.0.1:8000/${slidelist[currentIndex].image}`}
+                fill='true'
+                alt="slide"
+                priority={true}
+                className="absolute top-0 right-0 object-cover rounded-lg duration-500"
+            />
       <div className="absolute hidden group-hover:block top-[50%] -translate-x-0 p-1 rounded-full hover:bg-white/20 translate-y-[-50%] cursor-pointer left-5 ">
         <ChevronLeftIcon className="w-10 h-10 text-white/20 font-extrabold" onClick={prevSlide} />
       </div>
@@ -56,7 +67,7 @@ const Slides = () => {
         <ChevronRightIcon className="w-10 h-10 text-white/20 font-extrabold" onClick={nextSlide} />
       </div>
       <div className='absolute hidden group-hover:flex justify-between bottom-[5%] -translate-x-0 right-[50%]'>
-        {slides.map((slide, slideIndex) => (
+        {slidelist.map((slide, slideIndex) => (
           <div
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
@@ -70,4 +81,4 @@ const Slides = () => {
   )
 }
 
-export default Slides
+export default BannerSlides

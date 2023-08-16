@@ -1,20 +1,40 @@
 "use client"
-import { useState } from "react";
-import ReactMapGL from "react-map-gl";
+
+import mapboxgl from "mapbox-gl"
+import React, { useRef, useEffect, useState } from 'react';
+
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+
 export default function BillboardMap() {
-  const [viewport, setViewport] = useState({
-  width: "100%",
-  height: "100%",
-  // The latitude and longitude of the center of London
-  latitude: 51.5074,
-  longitude: -0.1278,
-  zoom: 10
-});
-return <ReactMapGL
-  mapStyle="mapbox://styles/mapbox/streets-v11"
-  mapboxApiAccessToken={"pk.eyJ1IjoiYWRlanVsIiwiYSI6ImNraWF5NHRzZzBncHYycnJ0c3lyNGlhemMifQ.Mybta6gzR48sB8ye-gahJQ"}
-  {...viewport}
-  onViewportChange={(nextViewport) => setViewport(nextViewport)}
-  >
-</ReactMapGL>
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(119.4144549);
+  const [lat, setLat] = useState(-5.1347684);
+  const [zoom, setZoom] = useState(15);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [lng, lat],
+      zoom: zoom
+    });
+    
+    map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
+    
+  return (
+    <div>
+      <div className="sidebar">
+      Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+      </div>
+      <div ref={mapContainer} className="map-container" />
+    </div>
+  )
 }
+

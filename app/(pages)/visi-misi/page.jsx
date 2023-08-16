@@ -5,7 +5,6 @@ import React from 'react'
 
 export default async function VisiMisi() {
   const visiMisiData = await getVisiMisi()
-  console.log(visiMisiData.data)
 
   return (
     <div className='text-[#3A354F] grid grid-cols-1 gap-1 bg-[#f7f7f8] w-full py-6 px-6 md:px-10'>

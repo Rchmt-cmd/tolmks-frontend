@@ -28,6 +28,7 @@ const Header = () => {
               src='/logo-mmn-jtse.png' 
               width={150} 
               height={100} 
+              priority={true}
               alt="logo" 
             />
           </a>
