@@ -1,6 +1,10 @@
+import getProfilUser from "@/app/libs/getProfilUser"
 import Image from "next/image"
+import { redirect } from "next/navigation"
 
-const ProfilUser = () => {
+export default async function ProfilUser() {
+  const profilUserData = await getProfilUser()
+
   return (
     <div className="text-[#3A354F] grid grid-cols-4 gap-5 bg-[#f7f7f8] w-full py-3 sm:px-10 px-2">    
       <div className="bg-white flex flex-col col-span-4 rounded-md shadow-md h-96">
@@ -19,7 +23,7 @@ const ProfilUser = () => {
             className="rounded-md absolute -bottom-10 left-6 shadow-md"
           />
           <div className="absolute bottom-6 left-52 text-xl text-white font-medium">
-            <h1>Rachmat Hidayat Abduh</h1>
+            <h1>{profilUserData.data.nama_user}</h1>
           </div>
         </div>
         <div className="p-6 pl-52">
@@ -70,6 +74,9 @@ const ProfilUser = () => {
       </div>
     </div>
   )
+  // if (profilUserData) {
+  // }else{
+  //   redirect('/')
+  // }
+  
 }
-
-export default ProfilUser

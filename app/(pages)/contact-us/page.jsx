@@ -27,7 +27,7 @@ export default async function ContactUs() {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="relative h-full w-full">
           <HomeMap />
         </div>
       </div>

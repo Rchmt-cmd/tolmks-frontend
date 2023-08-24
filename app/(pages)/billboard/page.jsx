@@ -11,7 +11,7 @@ const Billboard = () => {
       <div className='mb-3'>
         <h1 className="font-medium text-2xl ">Billboard</h1>
       </div>
-      <div className='rounded-md bg-white shadow-md p-6'>
+      <div className='rounded-md bg-white shadow-md relative h-96 w-full'>
         <BillboardMap />
       </div>
     </div>

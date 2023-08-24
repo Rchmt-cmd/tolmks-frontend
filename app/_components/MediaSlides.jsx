@@ -1,6 +1,7 @@
 "use client"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
+import Link from "next/link"
 import { useState, useEffect } from "react"
 
 export default function MediaSlides(data) {
@@ -44,7 +45,7 @@ export default function MediaSlides(data) {
             <ChevronRightIcon className="w-6 h-6 text-white font-extrabold" onClick={nextSlide} />
           </div>
         </div>
-        <button className="py-1 px-5 bg-gradient-to-r rounded-md shadow-md from-[#5732B9] to-[#5FABEE]">{slidelist[currentIndex].title}</button>
+        <Link href={`/media/${slidelist[currentIndex].id}`} className="py-1 px-5 bg-gradient-to-r rounded-md shadow-md from-[#5732B9] to-[#5FABEE]">{slidelist[currentIndex].title}</Link>
       </div>
       
     </div>

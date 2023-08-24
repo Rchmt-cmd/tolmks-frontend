@@ -4,11 +4,15 @@ import dynamic from "next/dynamic"
 import getHome from "../libs/getHome"
 import MediaSlides from "../_components/MediaSlides"
 import TarifSlides from "../_components/TarifSlides"
-import HomeMap from "../_components/HomeMap"
+
+const HomeMap = dynamic(() => import("../_components/HomeMap"), {
+  ssr:false,
+  loading: () => <div className="h-full bg-slate-400 animate-pulse rounded-md shadow-md w-full"></div>
+})
 
 const BannerSlides = dynamic(() => import('../_components/BannerSlides'), { 
   ssr: false,
-  loading: () => <p>Loading</p>
+  loading: () => <div className="w-full h-[90vh] max-h-[1440px] bg-slate-400 animate-pulse rounded-md shadow-md"></div>
 })
 
 
@@ -22,7 +26,7 @@ export default async function Home() {
         <div className=" text-white h-full col-span-11">
           <BannerSlides slides={homeData} />
         </div>
-        <div className="sm:col-span-5 col-span-11 h-60 sm:  h-full row-span-2">
+        <div className="sm:col-span-5 col-span-11 h-60 sm:h-full relative row-span-2">
           <HomeMap />
         </div>
         <Link href="/struk" className="bg-[#B90008] block text-white sm:col-span-6 col-span-11 p-3 rounded-md shadow-xl text-center">
