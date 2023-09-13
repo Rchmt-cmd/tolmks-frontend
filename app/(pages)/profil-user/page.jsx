@@ -3,7 +3,7 @@ import Image from "next/image"
 import { redirect } from "next/navigation"
 
 export default async function ProfilUser() {
-  const profilUserData = await getProfilUser()
+  // const profilUserData = await getProfilUser()
 
   return (
     <div className="text-[#3A354F] grid grid-cols-4 gap-5 bg-[#f7f7f8] w-full py-3 sm:px-10 px-2">    
@@ -23,7 +23,7 @@ export default async function ProfilUser() {
             className="rounded-md absolute -bottom-10 left-6 shadow-md"
           />
           <div className="absolute bottom-6 left-52 text-xl text-white font-medium">
-            <h1>{profilUserData.data.nama_user}</h1>
+            <h1>Tugas Akhir Test</h1>
           </div>
         </div>
         <div className="p-6 pl-52">
@@ -39,7 +39,7 @@ export default async function ProfilUser() {
         </div>
         <div>
           <p className="text-base">gatot subroto</p>
-          <p className="text-base">rachmath.059@gmail.com</p>
+          <p className="text-base">tugasakhirtest@test.com</p>
           <p className="text-base">083152501285</p>
         </div>
       </div>
