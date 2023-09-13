@@ -43,7 +43,7 @@ const Login = () => {
           <input value={password} onChange={event => setPassword(event.target.value)} placeholder="Password" className="block focus:border-[#975AFF] focus-visible:border-[#975AFF] w-full mb-3 bg-white py-1.5 px-3 rounded-md border border-[#E0E0E0]" type="password" name="password" id="password" />
           <Link href="/" className="text-sm text-[#124c83] mb-6 block">Kembali ke halaman utama</Link>
           <div className="flex flex-col min-[576px]:justify-between min-[576px]:flex-row">
-            <Link href="/Login" className="block hover:bg-[#975AFF] hover:text-white text-center min-[576px]:mb-0 mb-3 text-[#124c83] bg-[#D5F1FD] font-normal py-1.5 px-5 rounded-md text-base">Registrasi</Link>
+            <Link href="/register" className="block hover:bg-[#975AFF] hover:text-white text-center min-[576px]:mb-0 mb-3 text-[#124c83] bg-[#D5F1FD] font-normal py-1.5 px-5 rounded-md text-base">Registrasi</Link>
             <button type="submit" className="block hover:shadow-lg text-white bg-[#124C83] rounded-md py-1.5 px-5">Masuk</button>
           </div>
         </form>

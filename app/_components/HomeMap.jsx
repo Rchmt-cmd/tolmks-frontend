@@ -29,25 +29,25 @@ export default function HomeMap() {
       setZoom(map.current.getZoom().toFixed(2));
     });
 
-    const content = `
+    // const content = `
 
-              <div className="bg-white p-6 shadow-md rounded-md" style="overflow-y: auto;max-height: 300px; z-index:1000; width:100%">
-                <div class="card-content">
-                    <div class="card-body">
-                        <img class="card-img img-fluid rounded mb-3" src="https://www.kind.id/wp-content/uploads/2016/01/Slider_Intermark-1.jpg">
-                        <h5 class="card-title">Intermark Associate Tower</h5>
-                        <p class="card-text">Jl. Lkr. Tim. No.9, Rw. Mekar Jaya, Kec. Serpong, Kota Tangerang Selatan, Banten 15310</p>
-                    </div>
-                </div>
-              </div>
+    //           <div className="bg-white p-6 shadow-md rounded-md" style="overflow-y: auto;max-height: 300px; z-index:1000; width:100%">
+    //             <div class="card-content">
+    //                 <div class="card-body">
+    //                     <img class="card-img img-fluid rounded mb-3" src="https://www.kind.id/wp-content/uploads/2016/01/Slider_Intermark-1.jpg">
+    //                     <h5 class="card-title">Intermark Associate Tower</h5>
+    //                     <p class="card-text">Jl. Lkr. Tim. No.9, Rw. Mekar Jaya, Kec. Serpong, Kota Tangerang Selatan, Banten 15310</p>
+    //                 </div>
+    //             </div>
+    //           </div>
 
-            `
-    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(content).setMaxWidth("400px");
+    //         `
+    // const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(content).setMaxWidth("400px");
 
-    marker.current = new mapboxgl.Marker()
-        .setLngLat([ 119.4144549, -5.1347684])
-        .setPopup(popup) // sets a popup on this marker
-        .addTo(map.current);
+    // marker.current = new mapboxgl.Marker()
+    //     .setLngLat([ 119.4144549, -5.1347684])
+    //     .setPopup(popup) // sets a popup on this marker
+    //     .addTo(map.current);
 
   });
     
